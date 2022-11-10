@@ -41,14 +41,15 @@ input으로 현재 시간과 약속 시간 받으면 => 남은 시간 출력
 
 
 방법[3]
-0 input 받기
-	string str;으로 입력 받고 parsing 함수 맹글어서 
-	 그 함수에서 parsing 해줌 how ? 
-	 str[인덱스]로 한 글자씩 접근해서
-	 int형 변수에 -'0' 이걸로 숫자로 담아  
-	 ":" 이거면 continue 하고
-
-
+0 input 받기 string으로 받고 
+1 parsing 함수 만들어서 strsub로 parsing & stoi 로 시, 분, 초로 나눠 받고
+2 두 시간 다 초로 바꾸고 계산 
+	2- 1 (if the current time is earliar than the appionment time)
+		appiontment time - current time  
+	2-2 (else ...)
+		(appiontment time + 24시간) - current time 
+3 계산된 초를 다시 시, 분, 초로 변환
+4 결과 출력 
 	
 
 [input]
