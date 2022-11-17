@@ -21,7 +21,7 @@
 
 
 
-설계[2]
+설계[2] (tc : 2/5)
 0 input 받기 (int, int[], vector, result = -1;로 시작)
 1 func 맹글기
 	DFS(), isValid(), BackTracking(), MapChange(), solve() 
@@ -43,10 +43,14 @@
 
 
 설계[3]
-0 input 받기 (int, int[], vector, result = -1;로 시작)
+0 input 받기 (int, int[], vector)
 1 func 맹글기
-	DFS() 
-	
+	DFS() - 완탐
+	Solve() - limit
+	isValid() - 검증
+	Toggle - 전구 토글
+2 DFS() {  완탐 } + used (순열)
+3 pirint 
 
 
 
