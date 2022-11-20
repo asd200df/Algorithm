@@ -1,0 +1,41 @@
+[보충 기존 문제]
+
+1 장훈이의 높은 선반 - clear(2)
+https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV2b7Yf6ABcBBASw
+ 
+2 보호 필름 - clear(1)
+https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5V1SYKAaUDFAWu
+
+3 수영대회 결승전 - clear(1)
+https://swexpertacademy.com/main/code/userProblem/userProblemDetail.do?contestProbId=AWKaG6_6AGQDFARV
+
+4 미생물 격리 - clear(1)
+https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV597vbqAH0DFAVl
+
+
+
+[보충 추가 문제]
+
+1-1 (전구켜기) - clear(1)
+https://pro.mincoding.co.kr/problem-step/7/level/126/detail/%EC%A0%84%EA%B5%AC%EC%BC%9C%EA%B8%B0
+1-2 (2차원 동전 뒤집기)
+https://school.programmers.co.kr/learn/courses/30/lessons/131703
+
+2 (양궁 대회)
+https://school.programmers.co.kr/learn/courses/30/lessons/92342
+
+3-1 (양봉업자 코코)
+https://pro.mincoding.co.kr/enterprise/contest/ssafy/216/problem/A%ED%98%95_%EA%B8%B0%EC%B6%9C1
+3-2 (스노우 맨)
+https://pro.mincoding.co.kr/enterprise/contest/ssafy/216/problem/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C
+
+4 (자동사냥 매크로)
+https://pro.mincoding.co.kr/contest/216/problem/%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C2
+
+
+
+
+
+
+
+
