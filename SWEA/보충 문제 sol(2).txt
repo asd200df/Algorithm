@@ -32,7 +32,51 @@ minimum - B(선반 높이) 한 값 출력하기
 보호 필름
 
 [문제]
+두께 D, 가로 방향 W  >>  보호필름
+A(0) 특성 or B(1) 특성
+합격 기준 K (세로로 A 특성이든 B 특성이든 K개 이상씩 가로 끝까지 있어야 합격)
+약품으로 가로 한 줄씩 A or B 특성으로 바꿀 수 있음
+최소로 약품을 사용해서 성능 검사를 통과 할 수 있게 하고픔
+약 투입하지 않고 통과하면 0 출력 아니면 최솟값 출력
 
+
+설계[1]
+0 input (vector, map ...)
+1 make func
+	default >> init(), input(), solve() ...
+	bespoke >> DFS(), isValid(), Change(), BackTracking()...
+2 solve()
+	1. isValid check 하고 시작, 답이 0인 경우를 위해
+	2. for limit ~  >>  DFS(limit)
+	3. DFS() 에서 돌면서 바꿀 곳 저장해 놨다가 limit(종료지점)에 도착시
+		Change() 로 map chage >> isValid check >> 종료 or 계속
+		>> 계속해야 할 경우 BackTracking  시키고 return();
+	... 
+
+
+[input]
+10		// test case    
+6 8 3         		// D, W, K  (3≤D≤13), (1≤W≤20), -
+0 0 1 0 1 0 0 1	// AABA ...
+0 1 0 0 0 1 1 1
+0 1 1 1 0 0 0 0
+1 1 1 1 0 0 0 1
+0 1 1 0 1 0 0 1
+1 0 1 0 1 1 0 1
+6 8 3         
+1 1 1 1 0 0 1 0
+0 0 1 1 0 1 0 1
+1 1 1 1 0 0 1 0
+1 1 1 0 0 1 1 0
+1 1 0 1 1 1 1 0
+1 1 1 0 0 1 1 0
+...
+
+
+[output]
+#1 2
+#2 0
+...
 
 
 
