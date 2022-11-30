@@ -1,0 +1,108 @@
+5¹øÄÚµå
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+#include <queue>
+using namespace std;
+
+#define red 1
+#define blue 2
+
+int N, mini;
+int arr[8][8];
+int power[8];
+int team[8];
+bool used[8];
+bool visited[8];
+
+void init(){
+    mini = 21e8;
+    memset(arr, 0, sizeof(arr));
+    memset(power, 0, sizeof(power));
+
+    cin >> N;
+    for (int y = 0; y < N; y++)
+        for (int x = 0; x < N; x++)
+            cin >> arr[y][x];
+    for (int i = 0; i < N; i++)
+        cin >> power[i];
+
+    return;
+}
+
+bool isValid(int st, int fn, int color){
+    memset(visited, false, sizeof(visited));
+    visited[st] = true;
+
+    queue<int> q;
+    q.push(st);
+
+    while (!q.empty()){
+        int now = q.front();
+        q.pop();
+
+        for (int next = 0; next < N; next++){
+            if (arr[now][next] == 0) continue;
+            if (visited[next] == true) continue;
+            if (color != team[next]) continue;
+            if (next == fn) return true;
+            visited[next] = true;
+            q.push(next);
+        }
+    }
+
+    return false;
+}
+
+void DFS(int lev, int idx, int redN, int blueN){
+    if (mini == 0) return;
+    if (lev == N && mini <= abs(redN - blueN)) return;
+    if (lev == N){
+        for (int i = 0; i < N; i++){
+            for (int j = i + 1; j < N; j++){
+                if (team[i] != team[j]) continue;
+                if (!isValid(i, j, team[i])) return;
+            }
+        }
+
+        mini = min(mini, abs(redN - blueN));
+        return;
+    }
+
+    for (int i = idx; i < N; i++){
+        if (used[i] == true) continue;
+        used[i] = true;
+
+        for (int j = 0; j < 2; j++){
+            if (j == 0){
+                team[i] = red;
+                DFS(lev + 1, i + 1, redN + power[i], blueN);
+            }
+            else if (j == 1){
+                team[i] = blue;
+                DFS(lev + 1, i + 1, redN, blueN + power[i]);
+            }
+        }
+
+        used[i] = false;
+    }
+
+    return;
+}
+
+int main(){
+    freopen_s(new FILE*, "input.txt", "r", stdin);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ios::sync_with_stdio(false);
+
+    int T;
+    cin >> T;
+    for (int tc = 1; tc <= T; tc++){
+        init();
+        DFS(0, 0, 0, 0);
+        cout << "#" << tc << " " << mini << "\n";
+    }
+
+    return 0;
+}
