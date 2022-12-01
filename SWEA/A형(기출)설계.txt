@@ -1,0 +1,39 @@
+A형 기출 문제 
+
+3. 전원 연결
+
+[문제]
+N*N Cell 있음 
+cell엔 core나 전선이 올 수 있음
+가장 자리에 전원이 흐르고 있음 (가장 자리에 core는 이미 연결된 것으로 간주)
+전선은 직선으로만 설치 가능 (교차 안됨)
+최대한 많은 전원을 연결하였을 때, 전선 길이의 합을 구하라
+	1(최대한 많은 core를 연결해도 연결 안되는 core 있을 수 있음)
+	2(여러 방법이 있을 경우, 전선 길이가 최소가 되는 값 구하기)
+
+
+[설계]
+0 input >> vector, matrix, direct[] ... 
+1 make func
+	default >> init, input, solve
+	bespoke >> DFS, mapchange, backtracking, isValid ...
+2 DFS(now + 1, pick + 1 픽하고 안하고)
+	mapchange >> backtracking 
+3 Valid Check 
+4 minimum update ...
+5 print result
+
+
+[input]
+3  // test case
+7  // N (7<=N<=12)
+0 0 1 0 0 0 0	// cell ...
+0 0 1 0 0 0 0
+0 0 0 0 0 1 0
+0 0 0 0 0 0 0
+1 1 0 1 0 0 0
+0 1 0 0 0 0 0
+0 0 0 0 0 0 0
+
+[output]
+#1 12

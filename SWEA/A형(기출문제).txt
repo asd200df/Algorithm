@@ -1,0 +1,30 @@
+[A형 기출문제 열람]
+http://cert.ssafy.com/
+1. 나무의 키
+2. 알고스탁
+3. 전원 연결
+4. 산악 구조 로봇
+5. 지역구 나누기
+
+
+
+
+
+[1차시]
+5644. 무선 충전 (유사)
+https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRDL1aeugDFAUo
+1767. 프로세서 연결하기 (동일)
+https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV4suNtaXFEDFAUf
+
+[2차시]
+14510. 나무 높이 (동일)
+https://swexpertacademy.com/main/code/userProblem/userProblemDetail.do?contestProbId=AYFofW8qpXYDFAR4
+알고스탁 ( - )
+
+[3차시]
+다익스트라 ( - )
+개리맨더링 (유사 - 백준)
+
+
+
+
