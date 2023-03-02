@@ -1,0 +1,79 @@
+M1 = 중복순열 (중복신경안씀)
+1등, 2등, 3등 뽑아야할때
+
+M2 = 중복조합 (중복 신경안씀)
+등수상관없이 3개 뽑아야 할때
+
+M3 = 순열 (중복 제거함, used)
+
+조합 = M2 + used
+
+<주사위>
+
+#include <iostream>
+using namespace std;
+
+int n, m;
+int path[10];
+int used[10];
+
+void dice1(int lev) {
+    if (lev == n) {
+        for (int i = 0; i < n; i++) {
+            cout << path[i] << " ";
+        }
+        cout << "\n";
+        return;
+    }
+    for (int i = 0; i < 6; i++) {
+        path[lev] = i + 1;
+        dice1(lev + 1);
+        path[lev] = 0;
+    }
+}
+
+void dice2(int lev, int start) {
+    if (lev == n) {
+        for (int i = 0; i < n; i++) {
+            cout << path[i] << " ";
+        }
+        cout << "\n";
+        return;
+    }
+    for (int i = start; i < 6; i++) {
+        path[lev] = i + 1;
+        dice2(lev + 1, i);
+        path[lev] = 0;
+    }
+}
+
+void dice3(int lev) {
+    if (lev == n) {
+        for (int i = 0; i < n; i++) {
+            cout << path[i] << " ";
+        }
+        cout << "\n";
+        return;
+    }
+    for (int i = 0; i < 6; i++) {
+        if (used[i] == 1) continue;
+        used[i] = 1;
+        path[lev] = i + 1;
+        dice3(lev + 1);
+        path[lev] = 0;
+        used[i] = 0;
+    }
+}
+
+void choice(int m) {
+    if (m == 1) dice1(0);
+    else if (m == 2) dice2(0,0);
+    else if (m == 3) dice3(0);
+}
+
+int main() {
+
+    cin >> n >> m;
+    choice(m);
+    return 0;
+}
