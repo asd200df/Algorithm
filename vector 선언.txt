@@ -1,0 +1,13 @@
+vector 선언하기 
+
+# 1 <기본>
+vector<int> vec;
+
+# 2 <2차원 할당1>
+vector<vector<int>> vec(100001);
+
+# 3 <2차원 할당2>
+vector<int> vec[100001];
+
+# 4 <2차원 할당 + 2차원 고정 + 0으로 초기화>
+vector<vector<int>> vec(100001, vector<int>(100001, 0)); 
