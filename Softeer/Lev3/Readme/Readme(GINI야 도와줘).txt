@@ -4,7 +4,7 @@
 ※ Function에서 queue도 변수처럼 return이 된다는 것 인지하기 
 
 
-# 1
+# 1 (Fail)
 1) input 받기
 	struct 
 2) solve()
@@ -15,7 +15,7 @@
 3) return result
 
 
-#2
+#2 (시간초과)
 1) input 받기
 2) solve() 
 	1. Rain() >> 1 cycle search >> que 담고 return
@@ -40,3 +40,6 @@ X..XX
 W....
 ....*
 
+
+# 3 (정답)
+2 + map change 없이 used 사용으로 시간 줄이기 +  for ( queue.size() ) 로 한 바퀴씩 돌기 

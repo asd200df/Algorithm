@@ -1,4 +1,141 @@
-// GINI야 도와줘 
+// GINI야 도와줘 (정답)
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<stack>
+#include<queue>
+#include<vector>
+#include<cmath>
+#include<algorithm>
+#include<unordered_map>
+
+using namespace std;
+
+// Global
+int R, C;
+char map[51][51];
+int used[51][51];
+typedef struct {
+	int y, x;
+	int cnt;
+}str;
+queue<str> Ego_que;
+queue<str> Rain_que;
+int dirY[] = { 0, 0, -1, 1 };
+int dirX[] = { -1, 1, 0, 0 };
+int flag = 0;
+int result = 0;
+
+// Function
+void input();
+void solve();
+void Rain();
+void Ego();
+
+// Main
+int main(int argc, char** argv) {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
+	input();
+	solve();
+
+	if (flag == 0) cout << "FAIL\n";
+	else cout << result << "\n";
+
+	return 0;
+}
+
+// input
+void input() {
+	cin >> R >> C;
+	for (int i = 0; i < R; i++) {
+		for (int j = 0; j < C; j++) {
+			cin >> map[i][j];
+			if (map[i][j] == 'H') { used[i][j] = 1; } // 1 == 사람만 감
+			if (map[i][j] == 'W') { // 3 == 아무도 못 감
+				used[i][j] = 3;
+				Ego_que.push({ i, j, 0 });
+			}
+			if (map[i][j] == 'X') { used[i][j] = 3; }
+			if (map[i][j] == '*') {
+				used[i][j] = 3;
+				Rain_que.push({ i, j, 0 });
+			}
+			// w(사람) == 2, 2 == 비만 감 
+		}
+	}
+}
+
+// solution
+void solve() {
+	// used set >> H == 1, W == 3, X == 3, * == 3, w(사람) == 2;
+
+	while (!Ego_que.empty()) {
+		Rain();
+		Ego();
+		if (flag == 1) break;
+	}
+
+}
+
+// Rain Floodfill
+void Rain() {
+	int turn;
+	turn = Rain_que.size();
+
+	for (int t = 0; t < turn; t++) {
+		str now = Rain_que.front();
+		Rain_que.pop();
+
+		for (int i = 0; i < 4; i++) {
+			int ny = now.y + dirY[i];
+			int nx = now.x + dirX[i];
+
+			if (ny < 0 || ny >= R || nx < 0 || nx >= C) continue; // map range out
+			if (used[ny][nx] == 3 || used[ny][nx] == 1) continue; // used check
+
+			used[ny][nx] = 3;
+
+			Rain_que.push({ ny, nx, 0 });
+		}
+	}
+}
+
+// Ego Floodfill
+void Ego() {
+	int turn;
+	turn = Ego_que.size();
+
+	for (int t = 0; t < turn; t++) {
+		str now = Ego_que.front();
+		Ego_que.pop();
+
+		for (int i = 0; i < 4; i++) {
+			int ny = now.y + dirY[i];
+			int nx = now.x + dirX[i];
+
+			if (ny < 0 || ny >= R || nx < 0 || nx >= C) continue; // map range out
+			if (used[ny][nx] == 3 || used[ny][nx] == 2) continue; // used check
+
+			if (map[ny][nx] == 'H') {
+				flag = 1;
+				result = now.cnt + 1;
+				break;
+			}
+
+			used[ny][nx] = 2;
+
+			Ego_que.push({ ny, nx, now.cnt + 1 });
+		}
+
+		if (flag == 1) break;
+	}
+}
+
+
+/* GINI야 도와줘 (시간 초과)
 #include<iostream>
 #include<string>
 #include<cstring>
@@ -138,10 +275,10 @@ queue<str> Ego(queue<str> Eq) {
 	}
 
 	return tmp_q;
-}
+} */
 
 
-/* GINI야 도와줘 
+/* GINI야 도와줘 (오답)
 #include<iostream>
 #include<string>
 #include<cstring>
