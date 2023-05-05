@@ -1,4 +1,4 @@
-이 문제의 목적은 경로나 원소를 구하는게 아니야
+﻿이 문제의 목적은 경로나 원소를 구하는게 아니야
 최장 길이만 구하면 되는 문제야 
 
 
@@ -30,6 +30,14 @@ left = 0 min = 2 right = 4
 left = 2 mid = 3 right = 4
 2 + (4-2) / 2 = 2 ?
 
+
+
+#1 
+1. input 
+	>> if (첫 번째 수 && vector 안 가장 큰수 보다 크면) push_back !
+2. else 면 BS binary search 하기 
+	>> vector 안 숫자와 비교하면서 LIS(최장 부분 수열) 저장하기
+3. cout << vector.size();  
 
 
 

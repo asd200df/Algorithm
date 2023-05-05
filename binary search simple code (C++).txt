@@ -1,4 +1,4 @@
-# 직접 구현
+﻿# 직접 구현
 
 bool binarySearch(int *arr, int len, int key) {
         int start = 0;
@@ -38,3 +38,14 @@ bool binarySearch(int *arr, int start, int end, int key) {
                 return binarySearch(arr, mid + 1, end, key);
         }
 }
+
+
+
+
+
+
+# 다른 유형으로 Binary Search 와 최장 증가 부분 수열 (LIS) 문제와 코드는
+	Softeer >> D3 >> 징검다리 문제 확인해보기 !
+
+
+
