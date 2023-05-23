@@ -1,0 +1,15 @@
+struct 배열 만들기
+
+typedef struct {
+	int y, x;
+} str;
+
+str arr[100];
+
+이렇게 맹글면 100칸짜리 배열에 y와 x, 묶음으로 한 칸에 넣을 수 있음 
+
+값 input 시
+arr[idx] = { 1, 2 };
+
+값 output 시
+arr[idx].y; 
