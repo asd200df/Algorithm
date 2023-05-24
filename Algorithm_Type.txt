@@ -1,0 +1,83 @@
+알고리즘
+
+# Search
+Linear Search (선형 탐색)
+Binary Search (이진 탐색)
+Sequential Search (순차 탐색)
+Hash Search (해시 탐색)
+
+# Sorting
+Bubble Sort (버블 정렬)
+Selection Sort (선택 정렬)
+Insertion Sort (삽입 정렬)
+Quick Sort (퀵 정렬)
+Merge Sort (병합 정렬)
+Heap Sort (힙 정렬)
+Radix Sort (기수 정렬)
+Count Sort (계수 정렬)
+
+# 완전 탐색
+Brute Force
+Bit Mask
+Back Tracking
+재귀 함수
+순열
+Breadth-First Search
+Depth-First Search
+
+# 분할 정복
+
+# DP : Dynamic Programming (동적 계획법)
+
+# Greedy (그리디)
+
+# Tree
+Binary Search Tree
+
+# Graph
+위상 정렬
+
+# 최단 경로
+Floyd-Warshall
+Dijkstra (다익스트라)
+Bellman-Ford
+
+# MST (최소 신장트리)
+Kruskal
+Prim
+
+# 기타
+비트 연산
+진수 변환
+Recursion (재귀)
+유클리드 호제법 (최대공약수, 최소공배수)
+투포인터 (슬라이딩 윈도우)
+조합, 순열
+파라메트릭 서치
+LIS (최장 증가 수열)
+LCA (최소 공통 조상)
+Matching Parenthesis Problem
+Variables / Pointers manipulation
+reverse linked list(duplicates, removing duplicates)
+Custom data structures(Object oriented programming)
+
+등
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
