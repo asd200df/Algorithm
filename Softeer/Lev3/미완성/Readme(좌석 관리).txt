@@ -1,26 +1,26 @@
 좌석 관리 [21년 재직자 대회 예선]
 
 # 문제 이해 
-1이 in 됐을 때 √
+1이 in 됐을 때 
 1 gets the seat (1, 1). 
 
 2가 out 했을 때 
 2 leaves from the seat (1, 3).
 
-3이 in 했는데 다시 in 했을 때 √
+3이 in 했는데 다시 in 했을 때 
 3 already seated.
 
-4가 out 다음 또 out 했을 때 √
+4가 out 다음 또 out 했을 때 
 4 already left seat.
 
-5가 in 없이 out만 하려고 할 때 √
+5가 in 없이 out만 하려고 할 때 
 5 didn't eat lunch. 
 ( used[id] == 0 && visit[id] == 0 )
 
-6이 in 하고 out 했는데 다시 in 하려고 할 때 √ ( if-out 에서 1처리 요망 )
+6이 in 하고 out 했는데 다시 in 하려고 할 때  ( if-out 에서 1처리 요망 )
 6 already ate lunch.
 
-누군가 in 하려고 했는데 자리가 꽉 찼을 경우 √
+누군가 in 하려고 했는데 자리가 꽉 찼을 경우 
 There are no more seats. 
 
 #1
