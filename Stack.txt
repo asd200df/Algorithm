@@ -1,0 +1,7 @@
+Stack 사용법 예시
+
+3 2 1
+stack<int> st;
+int temp = st.top(); // 1
+st.pop(); // 1 없어지고
+3 2
