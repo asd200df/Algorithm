@@ -1,4 +1,6 @@
-// 숫자 카드 2 (10816) Silver[4]
+// 숫자 카드 2 (10816) 
+// Silver[4]
+// Binary Search & sort & Data Structure & Hash Map
 
 
 // [실패]
