@@ -1,5 +1,14 @@
 # unordered_map
 
+
+// 기본
+unordered_map<string, int> um;
+string order = "";
+cin >> order;
+int result = um[order];
+
+
+
 // unordered_map 카운트로 사용하는 예시
 #include <iostream>
 #include <unordered_map>
