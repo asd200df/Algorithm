@@ -1,4 +1,12 @@
-﻿# 일반 배열 Sort
+﻿# 주의 사항
+compare 함수 쓸 때
+bool compare (메소드 적고) { }
+호출시 sort(배열, 배열 + N, compare); 
+compare 함수에서 if() return true; or return A.t > B.t 뭐 이런식으로 하잖아
+그 떄 if 다음 else if 다음 else 에 적을 거 없어도 else 적어야 오류 안난다 else return false 라도 적어 
+
+
+# 일반 배열 Sort
 int arr
 sort(arr, arr + N);
 // sort(시작주소, 마지막주소 + 1);
