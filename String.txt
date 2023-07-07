@@ -1,0 +1,26 @@
+// #include<string> 정보
+
+
+int a;
+string b;
+
+
+1) string >> int 로 변환
+a = to_string(b);
+
+
+2) int >> string 으로 변환
+b = stoi(a);
+
+
+3) string 에 원하는 문자 찾기
+b.find("찾을 문자");
+※ 주의사항 찾으면 true or 1이 아니라 찾은 맨 앞 인덱스 반환를 반환 함 
+※ 검색 문자열이 없으면 string::npos(4294967295) 반환 == -1이랑 똑같음 
+	그래서 if(b.find("찾을 문자") != -1) { 찾은 거임 };
+
+
+
+
+
+
