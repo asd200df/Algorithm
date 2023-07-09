@@ -1,0 +1,77 @@
+// 부분합 (1806) Gold[4] 설계
+
+
+
+#1 // 반례를 해결 못 하겠으 ;; ㅠㅠ
+1) input()
+	// minimum, struct{값과 위치 저장하기}
+2) solve()
+	sort() // val AESC
+	left = 0;
+	right = N - 1;
+	while(left <= right){ // 조건문 유의해야 돼 변경해야 될 수도 있어 
+		Valid check
+		S(목표)를 넘는 숫자중 abs(위치) 가 가장 작은 수를 minimum에 갱신
+	}
+3) minimum 출력하기 
+
+
+# 반례 
+5 2
+1 1 1 1 5
+0 1 2 3 4
+6 > 2
+left 0 
+right 4
+if(vec[left].val + vec[right - 1].val < S) { left++; }
+else { right--; }
+
+
+
+#2 
+1) input()
+	// minimum, struct{값과 위치 저장하기}
+2) solve()
+	sort() // val AESC
+	left = 0;
+	right = 1;
+	while(left != right){ 
+		Valid check
+		S(목표)를 못 넘으면 right++ 계속하다가 되면 idx >> minimum 갱신
+		
+	}
+3) minimum 출력하기 
+
+반례 OK
+6 5
+1 1 1 2 3 2 << value
+0 1 2 3 4 5 << idx
+L = 
+R = 
+M = 
+ret =  
+
+
+아니 문제 이해를 잘못함 ....;;;
+
+
+#3 
+1) input
+2) solve
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
