@@ -6,15 +6,29 @@ compare 함수에서 if() return true; or return A.t > B.t 뭐 이런식으로 �
 그 떄 if 다음 else if 다음 else 에 적을 거 없어도 else 적어야 오류 안난다 else return false 라도 적어 
 
 
-# 일반 배열 Sort
+
+
+
+# 일반 배열 Sort [1] ASC : 오름차순
 int arr
-sort(arr, arr + N);
-// sort(시작주소, 마지막주소 + 1);
+sort(arr, arr + N); 	 
+// sort(시작주소, 마지막주소 + 1); 
+// N이 보통 배열 인덱스 마지막 + 1 이니까 시작주소 + N 한거야
 
 
 
 
-# 기본 Sort 예시
+
+# 일반 배열 Sort [2] DESC : 내림차순
+int arr
+sort(arr, arr + N, greater<int>()); 	 
+// sort(시작주소, 마지막주소 + 1, greater<int>()); 
+
+
+
+
+
+# 기본 Vector Sort 예시
 
 #include <iostream>
 #include <vector>
@@ -39,9 +53,7 @@ int main() {
 
 
 
-
-
-# vector<struct> sort 예시
+# 심화 vector<struct> sort 예시
 # 여기서 vector struct 의 경우는 sort 할 때 비교함수가 있어야 가능함 compare
 
 #include <iostream>
