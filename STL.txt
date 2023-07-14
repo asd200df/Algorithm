@@ -1,0 +1,52 @@
+STL은Standard Template Library의 줄임말로 뜻은 표준 템플릿 라이브러리입니다.
+
+
+
+1. #include <iostream>
+	// C++ 표준 입출력 클래스
+
+2. #include <string>
+	// string 문법 사용가능 +
+	// Ex) ==, +, = 등 연산자 사용 가능, to_string(), stoi() 등 ...
+
+3. #include <cstring>
+	// C style 의 string 문법 사용가능 
+	// Ex) getline(), strcat(), strcmp(), strcpy(), strlen() 등 ...
+	// ※ memset 이거 안적으면 못써 ... ;;;
+
+4. #include <stack>
+	// stack 자료구조 사용시 
+	// Ex) stack<int> st, st.push(), st.pop(), st.top() 등 ...
+
+5. #include <queue>
+	// queue 자료구조 사용시	
+	// Ex) queue<int> que, que.push(), que.pop(), que.front(), que.empty() 등 ...
+
+6. #include <vector>
+	// vector 자료구조 사용시
+	// Ex) vector<int> vec, vec.push_back() 등 ...
+
+7. #include <cmath>
+	// 각종 수학 함수
+	// Ex) min(), max(), abs(), sqrt(x) = (x의 제곱근 반환) 등 ...
+
+8. #include <algorithm>
+	// STL에서 제공되는 검색이나 정렬 등과 같은 알고리즘 사용시 
+	// Ex) sort(), fill(arr, arr + N, 1), 등 ...
+
+9. #include <unordered_map>
+	// Hash Map, Key Value 자료구조 사용시
+	// Ex) unordered_map<string, int> um, um["abc"] = 123;
+
+10. #include <deque>
+	// double-ended queue 자료구조 사용시
+	// Ex) deque<int> dq, dq.push_front/back(), dq.size(), dq.pop_front/back() 등
+
+
+...
+
+
+
+
+
+

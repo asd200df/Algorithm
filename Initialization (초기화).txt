@@ -1,0 +1,51 @@
+initialization
+
+
+
+#0 전역변수와 지역변수 
+전역 변수 : 0으로 초기화 되어 있음
+지역 변수 : 초기화가 필요함
+// 지역변수 ++ ; 이런식으로 쓰면 오류남 
+
+
+
+#1 일반 배열 초기화 (memset 사용)
+memset(배열 첫 주소, 초기화 할 숫자, sizeof(배열 첫 주소));
+※ [주의] 초기화 할 숫자는 0, -1 으로만 할 것 
+Ex) memset(arr, 0, sizeof(arr));
+
+
+
+#2 2차원 배열 초기화 (memset 사용)
+for(int idx < 배열 행 수; i++) { memset(배열[반복문 idx], 0, sizeof(배열[반복문 idx]); }
+Ex) arr[N][M];
+for(int i = 0; i < N; i++){
+	memset(arr[i], 0, sizeof(arr[i]));
+}
+
+
+
+#3 vector 초기화
+백터명.clear();
+Ex) vector<int> vec;
+vec.clear();
+
+
+
+#4 queue 초기화
+Ex) queue<int> que;
+1) while 문으로 하기
+Ex1) while(!que.empty()) { que.pop(); }
+2) 재선언하기
+Ex2) que = queue<int>()
+
+
+
+
+
+
+
+
+
+
+ 

@@ -4,6 +4,8 @@ bool compare (메소드 적고) { }
 호출시 sort(배열, 배열 + N, compare); 
 compare 함수에서 if() return true; or return A.t > B.t 뭐 이런식으로 하잖아
 그 떄 if 다음 else if 다음 else 에 적을 거 없어도 else 적어야 오류 안난다 else return false 라도 적어 
+그리고 else if 적을 때 >, <  했으면  == 같을 때도 정의해 줘야 돼 
+일반 sort는 같을 때 정의 안하면 랜덤으로 들어가
 
 
 
