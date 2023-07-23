@@ -60,6 +60,7 @@ typedef struct{
 	}
 }compare;
 // string 으로 해서 string.length() 로 비교하는 것도 가능하고 다양함
+※ 여기서 주의할 점 트리구조라서 그런지 위 처럼 쓰면 오름차순으로 정렬됨 ;;
 
 3) 더 나아가
 구조체 타입도 비교하고 정렬할 수 있음
@@ -75,6 +76,11 @@ priority_queue<node, vector<node>, compare> pq;
 ※ 여기서 주의 할 점 비교하는 구조체(compare)가 자료 담기용 구조체(node) 보다 위에 있으면
 	절차지향 언어이기 때문에 당연히 오류가 남 
 
+4) pair 사용
+priority_queue<pair<int, int>> pq;
+pq.push({ 1, 2 });
+pq.top().first;
+pq.top().second;
 
 
 
