@@ -45,6 +45,11 @@ pq.pop();
 
 
 #5 활용
+
+※ 여기서 중요한 거 두번째 인스턴스가 기준이라고 생각해야 돼 
+	// ex) bool operator()(int a, int b) << 이거면 b가 기준이야
+	// return a < b; 이거면 높은게 top(우선순위 높은 거) 에 있는거지
+
 1) 오름차순으로 해보기 (ASC)
 priority_queue<int, vector<int>, greater<int>> pq;
 // int 형에 vector 라는 컨테이너로 정렬하는데 greater ASC 으로 하겠다 (sort랑 반대)

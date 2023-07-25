@@ -6,7 +6,7 @@
 ※ sort 가 되어 있는다는 전제하
 
 # 1 lower_bound 
-- 찾으려는 값이 배열 몇 번째에 처음 등장하는지
+- 찾으려는 값이랑 같거나 큰 값이 배열 몇 번째에 처음 등장하는지
 (array 사용 예시)
 #include <iostream>
 #include <algorithm>
