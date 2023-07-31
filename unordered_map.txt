@@ -1,11 +1,14 @@
 # unordered_map
 
 
+
 // 기본
 unordered_map<string, int> um;
 string order = "";
 cin >> order;
 int result = um[order];
+.first >> string >> key 값
+.second >> int >> value 값
 
 
 
@@ -32,3 +35,26 @@ int main() {
 
     return 0;
 }
+
+
+
+
+# 심화
+
+unordered_map<string, bool> um;
+
+cin >> N;
+
+string inp, ord;
+for (int i = 0; i < N; i++) {
+	cin >> inp >> ord;
+
+	if (ord == "enter") { um[inp] = true; }
+	else { um[inp] = false; }
+}
+
+for (auto i : um) { // i 는 그냥 변수 이름이야 거기로 하나씩 들어올꺼야 
+	cout << i.second << "\n";
+	cout << i.first << "\n";
+} 
+// 이러면 자동으로 두 번째 값 (bool) 랑 첫번째 값(string) 순서대로 다 출력 함 

@@ -1,0 +1,27 @@
+for && auto 문
+
+
+
+# 기본 문법
+for (auto A (변수 이름) : B (어디서 꺼낼껀지)) {
+	B 에서 값을 하나씩 뽑아서 자료형이 auto인 A 에 순서대로 하나씩 담음
+} 
+
+
+
+# Ex)
+unordered_map<string, bool> um;
+vector<string> vec;
+
+for (auto i : um) { 
+	cout << i.second << "\n";
+	// 이렇게 적으면 um에 값이 몇 개 있는지 몰라도 순서대로 다 출력할 수 있고 
+	// .second 니까 0 or 1 값이 출력 되겠네
+	vec.push_back(i.first);
+	// 이렇게 적으면 um에 string key 값이 vec로 다 들어가겠군요 
+} 
+
+
+
+
+
