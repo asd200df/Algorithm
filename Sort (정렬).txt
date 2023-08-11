@@ -88,3 +88,20 @@ int main() {
 
 
 
+
+
+# string sort 하기
+string  st;
+
+오름차순  
+sort(st.begin(), st.end()); 
+// vector 랑 똑같이 해주면 됨 
+
+내림차순
+sort(st.begin(), st.end(), greater<int>());
+// 주의사항 greater에 <string> 아니고 <int> 로 해야 돼   인지!
+
+
+
+
+
