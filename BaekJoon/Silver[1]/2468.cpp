@@ -24,7 +24,7 @@ typedef struct {
 // Function
 void input();
 void solve();
-void BFS(int type, int lim, int insy, int insx);
+void BFS(int insy, int insx);
 
 // Main
 int main(int argc, char** argv) {
@@ -60,22 +60,12 @@ void solve() {
 		int target = i;
 		cnt = 0;
 
-		if (target == 4) {
-			int debug = 0;
-		}
-
 		// water 
 		for (int l = 0; l < N; l++) {
 			for (int k = 0; k < N; k++) {
-
-				if (used[l][k] == 1) { continue; }
-				if (maps[l][k] > target) { continue; }
-
-				BFS(1, 0, l, k);
+				if (maps[l][k] <= target) { used[l][k] = 1; }
 			}
 		}
-
-		int debug2 = 0;
 
 		// area
 		for (int l = 0; l < N; l++) {
@@ -83,7 +73,7 @@ void solve() {
 
 				if (used[l][k] == 1) { continue; }
 
-				BFS(2, 0, l, k);
+				BFS(l, k);
 
 				cnt++;
 			}
@@ -106,7 +96,7 @@ void solve() {
 }
 
 // Breadth-First Search
-void BFS(int type, int lim, int insy, int insx) {
+void BFS(int insy, int insx) {
 	queue<node> que;
 	que.push({ insy, insx });
 	used[insy][insx] = 1;
@@ -121,7 +111,6 @@ void BFS(int type, int lim, int insy, int insx) {
 
 			if (ny < 0 || ny >= N || nx < 0 || nx >= N) { continue; }
 			if (used[ny][nx] == 1) { continue; }
-			if (type == 1) { if (maps[ny][nx] > lim) { continue; } }
 			
 			used[ny][nx] = 1;
 
