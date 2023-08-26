@@ -1,0 +1,22 @@
+알파벳을 사용했는지 안했는지를 볼 때
+
+unordered_map<char, int> used1;
+int used2[26];
+bool used3[26];
+
+두개가 있을 때 
+
+char inp = 'A';
+
+used1[inp] = true;
+used2[inp - 65] = 1;
+used3[inp - 65] = true;
+
+if(used1, 2, 3 == true) { continue; } 
+ 
+... 
+
+
+같은 코드여도 used2, used3 이 더 빠름 
+Hash map, unordered_map 사용이 훨씬 느림 ...
+
