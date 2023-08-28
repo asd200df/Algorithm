@@ -1,15 +1,39 @@
 C++ Code 속도 관련 
 
 
+
+#0 시간 재는 코드 (C++)
+먼저 header 
+#include <time.h> 입력
+
+그리고 main문 안에
+
+clock_t start;
+clock_t end;
+
+start = clock();
+
+// 시간을 재고 싶은 코드
+
+end = clock();
+
+printf("%d ms elapsed\n", end - start);
+
+
+
 #1 입출력 속도 증가 1 (main문)
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);
 
 
+
 #2 입출력 속도 증가 2 (cout 속도 차이)
-cout << endl; 보다 cout << "\n"; 가 더 빠름
-so. cout << "\n"; 사용하는 것을 추천
+cout << endl; 보다는 
+cout << "\n"; 가 더 빠르고 보다 
+printf("%d\n") 가 더 빠름
+내가 잿을 때는 2, 3번 차이가 크진 않으나 1번은 차이가 심함 
+
 
 
 #3 used 처리 속도 차이
@@ -36,11 +60,13 @@ if(used1, 2, 3 == true) { continue; }
 Hash map, unordered_map 사용이 훨씬 느림 ...
 
 
+
 #4 Maximum 구하기 속도
 1) if(maxi < inp) { maxi = inp; }
 2) maxi = max(maxi, inp);
 둘 중에 1번이 더 빠르다는 의견과 
 요즘 컴파일러들은 비슷하니 눈에 더 잘들어오는 것을 사용하라는 의견으로 나뉨
+내가 시간 잿을 때는 1번이 더 빨랐음 
 
 
 
