@@ -1,0 +1,113 @@
+// 숨바꼭질 5 (17071) Platinum[5]
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<stack>
+#include<queue>
+#include<deque>
+#include<vector>
+#include<cmath>
+#include<algorithm>
+#include<unordered_map>
+
+using namespace std;
+
+// Global
+int N, K; // <= 500,000
+int dijk[500005];
+int sumarr[500005];
+
+// Function
+void input();
+void solve();
+int BFS(int ins);
+
+// Main
+int main(int argc, char** argv) {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
+	input();
+	solve();
+
+	return 0;
+}
+
+// input
+void input() {
+	cin >> N >> K;
+
+	// init dijkstra array
+	for (int i = 0; i < 500005; i++) { 
+		dijk[i] = 21e8; 
+		sumarr[i + 1] = sumarr[i] + (i + 1);
+	}
+}
+
+// solution
+void solve() {
+	int minimum = 0;
+
+	// BFS func call && result update 
+	if (N != K) { minimum = BFS(N); }
+
+	// print result !
+	cout << minimum << "\n";
+}
+
+// Breadth-First Search
+int BFS(int ins) {
+	queue<int> que, bu;
+	que.push(ins);
+	dijk[ins] = 0;
+
+	int first_K = K;
+	int idx = 1;
+	while (true) {
+		// 동생 이동 
+		K = first_K + sumarr[idx];
+
+		if (K > 500000) { break; }
+
+		// debug
+		int debug = 0;
+
+		if (dijk[K] != 21e8) { return idx + 1; }
+
+		while (!que.empty()) { // 언니 이동
+			int now = que.front();
+			que.pop();
+
+			// 도착
+			// if (now == K) { return dijk[now]; }
+
+			// 범위 제한 && 가중치 더 크면 queue에 넣을 필요 없음
+			if (now * 2 <= 500000 && dijk[now] + 1 < dijk[now * 2]) {
+				dijk[now * 2] = dijk[now] + 1;
+
+				bu.push(now * 2);
+			}
+			if (now + 1 <= 500000 && dijk[now] + 1 < dijk[now + 1]) {
+				dijk[now + 1] = dijk[now] + 1;
+
+				bu.push(now + 1);
+			}
+			if (now - 1 >= 0 && dijk[now] + 1 < dijk[now - 1]) {
+				dijk[now - 1] = dijk[now] + 1;
+
+				bu.push(now - 1);
+			}
+		}
+
+		que = bu;
+		while(!bu.empty()) { 
+			if (bu.front() == K) { return dijk[bu.front()]; }
+			bu.pop(); 
+		}
+
+		idx++;
+	}
+
+	return -1;
+}
