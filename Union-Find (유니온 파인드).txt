@@ -1,0 +1,130 @@
+Union-Find (유니온 파인드 : 합집합 찾기) 
+
+
+
+#0 
+Union-Find 는 대표적인 그래프 알고리즘입니다.
+'합집합 찾기' 라는 의미를 가진 알고리즘이고,
+서로소 집합 (Disjoint-Set) 알고리즘이라고도 부름
+
+
+#1 
+여러 개의 노드가 존재할 때 두 개의 노드를 선택해서, 
+현재 이 두 노드가 서로 같은 그래프에 속하는지 판별하는 알고리즘
+※ 둘의 부모가 같으면 사이클이 생겼다는 증거 
+
+
+#2 
+배열에 초기화 해주는데, 처음에는 자기 자신이 부모임
+노드의 번호	: 1 2 3 4 5 ...
+부모노드의 번호	: 1 2 3 4 5 ...
+
+만약 1과 2가 연결되었다고 해봅시다 그렇다면
+노드 : 1 2 3 4 5 ... 
+부모 : 1 1 3 4 5 ... 
+이런식으로 되겠지 (보통 더 작은 값쪽으로 합침)
+
+그 다음은 2와 3이 연결된다면 
+노드 : 1 2 3 4 5 ...
+부모 : 1 1 2 4 5 ... 
+이렇게 되겠지 근데 2하고 3의 부모 노드가 다르게 적혔잖아 
+그래서 재귀 함수로 타고 들어가서 1로 바꿔줘야 돼 
+노드 : 1 2 3 4 5 ...
+부모 : 1 1 1 4 5 ... 
+어떻게 ? 3의 부모인 2찾아가보니까 1 써있고, 그러면 1로 찾아가면 거기가 끝(본인이 부모)
+이런식으로 재귀 돌려서 찾는거임 
+
+
+#3 (C 코드)
+// 부모노드를 찾는 함수
+int getParent(int parent[], int x) {
+	if(parent[x] == x) { return x; } // 본인이 부모면 부모노드 찾은 거니까
+	// 다르다면 부모 찾아야 되니까 
+	return parent[x] = getParent(parent, parent[x]); // 찾으러 감
+	// 갔다가 돌아오면서  '여기다' = if로 찾은 부모 다 넣겠지 
+}
+
+// 두 부모 노드를 합치는 함수 
+int unionParent(int parent[], int a, int b){ // a와 b 받아오고
+	a = getParent(parent, a); // 각 각의 부모 값을 
+	b = getParent(parent, b); // 찾아서 가져오고 
+
+	// 더 작은 쪽으로 부모 갱신해주는 거
+	if(a < b) { parent[b] = a; }	
+	else { parent[a] = b; }
+}
+
+// 같은 부모를 가지고 있는지 확인하는 함수 
+int findParent(int parent[], int a, int b){
+	a = getParent(parent, a); // 각자 부모 
+	b = getparent(parent, b); // 찾아옴 
+	
+	// 비교하고 
+	if(a == b) return 1; // 부모 같음
+	else return -1;	// 부모 같지 않음 
+}
+
+// 처음에 
+for(i < N) { parent[i] = i } // 자기 자신 가르키도록 만들고 시작해야함 
+
+
+
+#4 (C++ 예시 코드)
+#include<iostream>
+#include<vector>
+
+using namespace std;
+int n, m;
+int parent[1000001];
+
+int getParent(int x) {
+    if (parent[x] == x) return x;
+    return parent[x] = getParent(parent[x]);
+}
+void unionParent(int a, int b) {
+    a = getParent(a);
+    b = getParent(b);
+    if (a > b) parent[a] = b;
+    else parent[b] = a;
+}
+void findParent(int a, int b) {
+    a = getParent(a);
+    b = getParent(b);
+    if (a == b) cout << "YES\n";
+    else cout << "NO\n";
+}
+
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    cin >> n >> m;
+    for (int i = 1; i <= n; i++) {
+        parent[i] = i;
+    }
+    for (int i = 0; i < m; i++) {
+        int o, a, b;
+        cin >> o >> a >> b;
+        if (!o) {// union연산
+            unionParent(a, b);
+        }
+        else { //find연산
+            findParent(a, b);
+        }
+
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
