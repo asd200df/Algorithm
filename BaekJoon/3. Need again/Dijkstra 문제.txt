@@ -1,0 +1,13 @@
+Dijkstra 문제
+
+
+
+# G5(1916) 최소비용 구하기
+Priority_queue 와 Dijkstra 사용해도 조건문 하나에 시간초과 남 
+시간 제한 0.5 초라 가지치기 잘해야 함
+
+
+# G4(1753) 최단거리
+Priority_queue 와 dijkstra 배열 둘 다 사용해야 됨 
+그냥 queue 와 dijkstra 배열 사용하면 
+최적화 해도 TL(시간초과) or ML(메모리 초과) 나옴
