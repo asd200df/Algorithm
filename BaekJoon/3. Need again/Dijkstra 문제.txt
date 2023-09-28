@@ -11,3 +11,8 @@ Priority_queue 와 Dijkstra 사용해도 조건문 하나에 시간초과 남
 Priority_queue 와 dijkstra 배열 둘 다 사용해야 됨 
 그냥 queue 와 dijkstra 배열 사용하면 
 최적화 해도 TL(시간초과) or ML(메모리 초과) 나옴
+
+
+# P4(1854) K번째 최단경로 찾기 
+말 그대로 그냥 최소비용 최단거리를 찾는 것이 아니라
+K번째를 찾는 것이라 생각해볼 것이 좀 있음 
