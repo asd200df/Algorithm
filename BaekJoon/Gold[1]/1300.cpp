@@ -1,4 +1,4 @@
-// K번째 수 (1300) Gold[2]
+// K번째 수 (1300) Gold[1]
 #include<iostream>
 #include<string>
 #include<cstring>

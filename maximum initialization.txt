@@ -1,0 +1,13 @@
+maximum initialization
+
+
+최대값 초기화 하기
+int 형은 
+int 변수 = 21e8; 
+이렇게 21억 넣어주면 되지만
+
+long long 타입은
+long long 변수 = 3e9; 
+넣어줘야 돼 
+
+여기서 3e9 는 30억 정도 
